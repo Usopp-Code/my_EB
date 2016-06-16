@@ -14,6 +14,11 @@ $image = imagecreatetruecolor($width, $height);
 $white = imagecolorallocate($image, 255, 255, 255);
 $black = imagecolorallocate($image, 0, 0, 0);
 imagefilledrectangle($image, 1, 1, $width-2, $height, $white);
+//
+$type = 1;
+$length = 4;
+$pixel = 50;
+$line = 3;
 $chars = buildRandomString($type,$length);
 $_SESSION['verify'] = $chars;
 $fontfiles = array("SIMYOU.TTF");
@@ -26,6 +31,13 @@ for($i=0;$i<$length;$i++){
     $text = substr($chars, $i ,1);
     $color = imagecolorallocate($image, mt_rand(50, 90), mt_rand(80, 200), mt_rand(90, 180));
     imagettftext($image, $size, $angle, $x, $y, $color, $fontfile, $text);
+}
+for($i=0;$i<$dotnum;$i++){
+    imagesetpixel($image, mt_rand(0, $width-1), mt_rand(0, $height-1), $black);
+}
+for($i=0;$i<$line;$i++){
+    $color = imagecolorallocate($image, mt_rand(50, 90), mt_rand(80, 200), mt_rand(90, 180));
+    imageline($image, mt_rand(0, $width-1), mt_rand(0, $height-1), mt_rand(0, $width-1), mt_rand(0, $height-1), $color);
 }
 header("content-type:image/gif");
 imagegif($image);
