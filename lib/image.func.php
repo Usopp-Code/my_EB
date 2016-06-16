@@ -8,7 +8,7 @@
 require_once 'string.func.php';
 
 //创建画布,使用gd库创建验证码
-function verifyImage($sess_name='verify',$type=1,$length=4,$pixel=0,$line=0){
+function verifyImage($type=1,$length=4,$pixel=0,$line=0,$sess_name='verify'){
     $width = 80;
     $height = 28;
     $image = imagecreatetruecolor($width, $height);
