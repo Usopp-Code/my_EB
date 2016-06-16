@@ -10,8 +10,8 @@ require_once 'string.func.php';
 //创建画布,使用gd库创建验证码
 function verifyImage($type=1,$length=4,$pixel=0,$line=0,$sess_name='verify'){
     session_start();
-    $width = 80;
-    $height = 28;
+    $width = 120;
+    $height = 58;
     $image = imagecreatetruecolor($width, $height);
     $white = imagecolorallocate($image, 255, 255, 255);
     $black = imagecolorallocate($image, 0, 0, 0);
@@ -41,4 +41,3 @@ function verifyImage($type=1,$length=4,$pixel=0,$line=0,$sess_name='verify'){
     imagegif($image);
     imagedestroy($image);
 }
-verifyImage(3,4,20,3);
