@@ -6,4 +6,4 @@
  * and open the template in the editor.
  */
 require_once '../lib/image.func.php';
-verifyImage();
+verifyImage(3,4,10,3);
