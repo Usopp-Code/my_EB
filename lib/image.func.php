@@ -5,12 +5,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-require_once 'string.func.php';
+require_once 'include.php';
 
 //创建画布,使用gd库创建验证码
 function verifyImage($type=1,$length=4,$pixel=0,$line=0,$sess_name='verify'){
     session_start();
-    $width = 50;
+    $width = 80;
     $height = 28;
     $image = imagecreatetruecolor($width, $height);
     $white = imagecolorallocate($image, 255, 255, 255);
