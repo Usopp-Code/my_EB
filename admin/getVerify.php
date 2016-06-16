@@ -5,5 +5,5 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-require_once '../lib/image.func.php';
-verifyImage(3,4,10,3);
+require_once '../include.php';
+verifyImage(1,4,10,3);
